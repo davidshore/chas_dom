@@ -24,11 +24,6 @@ moreBlue.forEach((boxLetter) => {
 const boxA = document.getElementById("A");
 console.log("A", boxA);
 
-const heading = document.getElementsByClassName("heading");
-console.log(heading);
-
-// heading.textContent = "hej";
-
 const boxes = document.getElementsByClassName("box");
 console.log(boxes);
 
@@ -39,7 +34,31 @@ const redBoxes = document.querySelectorAll(".red");
 console.log("redBoxes", redBoxes);
 
 // UPDATE
+const heading = document.getElementsByClassName("heading");
+console.log(heading);
+heading[0].textContent = "hej";
+
 const blueBoxes = document.querySelectorAll(".blue");
 blueBoxes.forEach((blueBox) => {
   blueBox.innerHTML = `<h2>${blueBox.innerHTML}</h2>`;
 });
+
+const greenBox = document.createElement("div");
+greenBox.setAttribute("class", "box green textWhite");
+greenBox.textContent = "I";
+
+// hämta parent
+const col3 = document.querySelector("#col3");
+const boxJ = document.querySelector("#J");
+const boxH = document.querySelector("#H");
+
+col3.insertBefore(greenBox, boxJ);
+
+//Delete
+// Behöver parent och elementet som ska tas bort.
+col3.removeChild(boxH);
+col3.removeChild(boxJ);
+
+//Uppdatera style med javascript
+const boxC = document.querySelector("#C");
+boxC.style.backgroundColor = "purple";
